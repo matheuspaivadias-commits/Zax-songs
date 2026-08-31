@@ -28,35 +28,79 @@
             font-family: sans-serif;   
             color: #ffffff;            
             animation: fundoAnimado 10s ease-in-out infinite, efeitoRGB 6s linear infinite;
+            position: relative; /* Necessário para espalhar as figurinhas pelo fundo */
+            overflow-x: hidden; /* Evita que a tela fique arrastando para os lados por causa dos stickers */
         }
 
-        /* Estilo das figurinhas do Brocasito coladas nos cantos */
+        /* Estilo para a coleção de muitas figurinhas do Brocasito */
         .figurinha {
-            position: fixed;         
-            width: 80px;             
+            position: absolute; /* Gruda no fundo da página */
+            width: 75px;        /* Tamanho ideal de adesivo */
             height: auto;
             border-radius: 50px;     
             border: 2px solid #fff;  
-            z-index: 1000;           
-            opacity: 0.8;            
+            z-index: 1;         /* Fica atrás dos vídeos para não atrapalhar */
+            opacity: 0.6;       /* Transparência estilosa de fundo */
         }
 
-        .canto-esquerdo {
-            top: 20px;
-            left: 20px;
-        }
-
-        .canto-direito {
-            bottom: 20px;
-            right: 20px;
-        }
+        /* Posicionando cada uma das várias figurinhas */
+        .f1 { top: 120px; left: 5%; }
+        .f2 { top: 250px; right: 4%; }
+        .f3 { top: 600px; left: 3%; }
+        .f4 { top: 900px; right: 5%; }
+        .f5 { top: 1300px; left: 4%; }
+        .f6 { bottom: 150px; right: 3%; }
 
         h1 {
             color: #ff0000;            
             text-align: center;        
-            font-size: 40px;           
+            font-size: 45px;           
             text-transform: uppercase; 
-            text-shadow: 0 0 10px #ff0000;
+            text-shadow: 0 0 15px #ff0000;
+            margin-bottom: 5px;
+        }
+
+        /* Estilo do seu novo título/lema "rep e vida" */
+        .lema {
+            text-align: center;
+            font-size: 22px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 0 0 8px #ff0000;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        /* Truque da Barra de Pesquisa */
+        .caixa-pesquisa {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 10; /* Fica sempre na frente */
+        }
+
+        .caixa-pesquisa input {
+            width: 80px;
+            max-width: 500px;
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: #1a1a1a;
+            border: 2px solid #ff0000;
+            border-radius: 25px; /* Deixa as pontas arredondadas e modernas */
+            color: white;
+            outline: none;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            transition: 0.3s;
+        }
+
+        /* Quando clica para digitar, a barra brilha mais forte! */
+        .caixa-pesquisa input:focus {
+            width: 100%;
+            border-color: #00ff00; /* Muda para verde gamer ao clicar! */
+            box-shadow: 0 0 15px #00ff00;
         }
 
         h2 {
@@ -66,9 +110,10 @@
             padding-left: 10px;        
             margin-top: 40px;          
             text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
+            position: relative;
+            z-index: 5;
         }
 
-        /* Apelido especial para deixar o Lil Zé branco com brilho branco */
         .texto-branco {
             color: #ffffff !important;
             border-left: 5px solid #ffffff; 
@@ -79,14 +124,17 @@
             color: #ff3333;
             font-size: 20px;
             margin-top: 20px;
+            position: relative;
+            z-index: 5;
         }
 
         ul {
             list-style-type: "🎵 "; 
             padding-left: 20px;
+            position: relative;
+            z-index: 5;
         }
 
-        /* Links das músicas em azul bem vivo */
         a {
             color: #00bfff;
             text-decoration: none; 
@@ -98,13 +146,14 @@
             text-shadow: 0 0 5px #00bfff;
         }
 
-        /* Organização dos vídeos lado a lado */
         .galeria-videos {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
             margin-bottom: 20px;
+            position: relative;
+            z-index: 5;
         }
 
         iframe {
@@ -124,23 +173,35 @@
             border-top: 2px dashed #ff0000;
             color: #ffffff;
             text-shadow: 0 0 10px #ff0000;
+            position: relative;
+            z-index: 5;
         }
     </style>
 </head>
 
 <body>
-    <!-- Figurinhas do Brocasito -->
-    <img src="https://pinimg.com" class="figurinha canto-esquerdo" alt="Broca BGK">
-    <img src="https://pinimg.com" class="figurinha canto-direito" alt="Planeta Plug">
+    <!-- CHUVA DE FIGURINHAS: Adicionamos muitas figurinhas espalhadas pelo site todo! -->
+    <img src="https://pinimg.com" class="figurinha f1" alt="Broca BGK">
+    <img src="https://pinimg.com" class="figurinha f2" alt="Planeta Plug">
+    <img src="https://pinimg.com" class="figurinha f3" alt="Broca Sticker">
+    <img src="https://pinimg.com" class="figurinha f4" alt="Coração Broca">
+    <img src="https://pinimg.com" class="figurinha f5" alt="Plug Gang">
+    <img src="https://pinimg.com" class="figurinha f6" alt="Broca Final">
 
     <h1>zax songs</h1>
+    <!-- O lema irado que você pediu -->
+    <p class="lema">⚡ rep e vida 🎵</p>
+
+    <!-- A barra de pesquisa profissional -->
+    <div class="caixa-pesquisa">
+        <input type="text" placeholder="Pesquise músicas ou artistas...">
+    </div>
 
     <h2>Brocasito</h2>
     <div class="galeria-videos">
         <iframe src="https://youtube.com" title="Brocasito - “Tentando sair do Gueto”" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe src="https://youtube.com" title="BROCASITO - SCARSITO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <!-- Nova música do Brocasito adicionada aqui! -->
-        <iframe src="https://www.youtube.com/embed/HfAAyTUeuvg?list=RDEMF9nUFHEIndIEpjSFmChxCA" title="Atirador Freestyle" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://youtube.com" title="Atirador Freestyle" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <h3>🔥 Mais Músicas do Brocasito:</h3>
@@ -151,8 +212,7 @@
     <h2>link do zap</h2>
     <div class="galeria-videos">
         <iframe src="https://youtube.com" title="12 - rei dos demônios ft. Cravinhos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <!-- Nova música do Link do Zap adicionada aqui! -->
-        <iframe src="https://www.youtube.com/embed/JXN4TLaDDDI?list=RDEMn3Tv1k6f71RrMcw3Yv5jaA" title="Link do Zap - lágrimas no celular (Official Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://youtube.com" title="Link do Zap - lágrimas no celular" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <h2 class="texto-branco">lil ze</h2>
@@ -162,29 +222,16 @@
 
     <h2>Link</h2>
     <div class="galeria-videos">
-        <!-- Nova categoria criada para o artista Link! -->
-        <iframe src="https://www.youtube.com/embed/J7q3-EdIkmg?list=RDEMn3Tv1k6f71RrMcw3Yv5jaA" title="Link - O Samba Morreu (Clipe oficial)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://youtube.com" title="Link - O Samba Morreu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <h2>vmz</h2>
     <div class="galeria-videos">
         <iframe src="https://youtube.com" title="VMZ - Vênus" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <!-- Novas músicas do VMZ adicionadas aqui! -->
         <iframe src="https://youtube.com" title="VMZ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/aYsP_fD-sn0?list=RDEMn3Tv1k6f71RrMcw3Yv5jaA" title="a última dança" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://youtube.com" title="a última dança" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <h3>🌌 Mais Músicas do VMZ:</h3>
     <ul>
         <li><a href="https://youtube.com" target="_blank">Plutão</a></li>
-        <li><a href="https://youtube.com" target="_blank">Sad Boy</a></li>
-        <li><a href="https://youtube.com" target="_blank">Clique aqui para ver todo o catálogo do VMZ</a></li>
-    </ul>
-
-    <footer>
-        ⚡ Desenvolvido com muito estilo por Matheus 🎵
-    </footer>
-
-</body>
-
-</html>

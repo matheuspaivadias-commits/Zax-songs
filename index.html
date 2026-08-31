@@ -22,28 +22,34 @@
             100% { border-color: #ff0000; box-shadow: 0 0 15px #ff0000; } 
         }
 
+        /* Animação extra para fazer o brilho estelar dos vídeos pulsar */
+        @keyframes brilhoEstelar {
+            0%   { box-shadow: 0 0 15px #ffd700; border-color: #ffd700; }
+            50%  { box-shadow: 0 0 30px #ff8c00, 0 0 10px #ffd700; border-color: #ff8c00; }
+            100% { box-shadow: 0 0 15px #ffd700; border-color: #ffd700; }
+        }
+
         body {
             border: 8px solid #ff0000;  
             padding: 20px;             
             font-family: sans-serif;   
             color: #ffffff;            
             animation: fundoAnimado 10s ease-in-out infinite, efeitoRGB 6s linear infinite;
-            position: relative; /* Necessário para espalhar as figurinhas pelo fundo */
-            overflow-x: hidden; /* Evita que a tela fique arrastando para os lados por causa dos stickers */
+            position: relative; 
+            overflow-x: hidden; 
         }
 
-        /* Estilo para a coleção de muitas figurinhas do Brocasito */
+        /* Coleção de figurinhas do Brocasito */
         .figurinha {
-            position: absolute; /* Gruda no fundo da página */
-            width: 75px;        /* Tamanho ideal de adesivo */
+            position: absolute; 
+            width: 75px;        
             height: auto;
             border-radius: 50px;     
             border: 2px solid #fff;  
-            z-index: 1;         /* Fica atrás dos vídeos para não atrapalhar */
-            opacity: 0.6;       /* Transparência estilosa de fundo */
+            z-index: 1;         
+            opacity: 0.6;       
         }
 
-        /* Posicionando cada uma das várias figurinhas */
         .f1 { top: 120px; left: 5%; }
         .f2 { top: 250px; right: 4%; }
         .f3 { top: 600px; left: 3%; }
@@ -60,7 +66,6 @@
             margin-bottom: 5px;
         }
 
-        /* Estilo do seu novo título/lema "rep e vida" */
         .lema {
             text-align: center;
             font-size: 22px;
@@ -73,57 +78,57 @@
             margin-bottom: 30px;
         }
 
-        /* Truque da Barra de Pesquisa */
         .caixa-pesquisa {
             display: flex;
             justify-content: center;
             margin-bottom: 40px;
             position: relative;
-            z-index: 10; /* Fica sempre na frente */
+            z-index: 10; 
         }
 
         .caixa-pesquisa input {
-            width: 80px;
+            width: 80%;
             max-width: 500px;
             padding: 12px 20px;
             font-size: 16px;
             background-color: #1a1a1a;
             border: 2px solid #ff0000;
-            border-radius: 25px; /* Deixa as pontas arredondadas e modernas */
+            border-radius: 25px; 
             color: white;
             outline: none;
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
             transition: 0.3s;
         }
 
-        /* Quando clica para digitar, a barra brilha mais forte! */
         .caixa-pesquisa input:focus {
-            width: 100%;
-            border-color: #00ff00; /* Muda para verde gamer ao clicar! */
+            border-color: #00ff00; 
             box-shadow: 0 0 15px #00ff00;
         }
 
+        /* MUDANÇA: Nomes dos artistas em cima das músicas e muito maiores! */
         h2 {
-            font-size: 32px;           
+            font-size: 48px; /* Letra bem grande e de destaque */
             color: #ffffff;            
-            border-left: 5px solid #ff0000; 
-            padding-left: 10px;        
-            margin-top: 40px;          
-            text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
+            border-left: 8px solid #ff0000; /* Linha lateral mais grossa */
+            padding-left: 15px;        
+            margin-top: 50px;          
+            margin-bottom: 20px; /* Garante que fique bem em cima das músicas */
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
             position: relative;
             z-index: 5;
+            text-transform: uppercase;
         }
 
         .texto-branco {
             color: #ffffff !important;
-            border-left: 5px solid #ffffff; 
-            text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+            border-left: 8px solid #ffffff; 
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
         }
 
         h3 {
             color: #ff3333;
             font-size: 20px;
-            margin-top: 20px;
+            margin-top: 25px;
             position: relative;
             z-index: 5;
         }
@@ -150,25 +155,27 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: 25px;
             margin-bottom: 20px;
             position: relative;
             z-index: 5;
         }
 
+        /* MUDANÇA: Efeito de estrela brilhante ao redor das músicas */
         iframe {
             width: 450px;
             height: 250px;
             max-width: 100%; 
-            border: 3px solid #ff0000; 
-            border-radius: 8px;
-            animation: efeitoRGB 6s linear infinite;
+            border: 4px solid #ffd700; /* Borda dourada linda */
+            border-radius: 12px;
+            /* Ativa a animação que faz a "estrela" dourada ao redor pulsar de brilho */
+            animation: brilhoEstelar 3s ease-in-out infinite; 
         }
 
         footer {
             text-align: center;
-            margin-top: 50px;
-            padding: 15px;
+            margin-top: 60px;
+            padding: 25px;
             font-size: 18px;
             border-top: 2px dashed #ff0000;
             color: #ffffff;
@@ -180,7 +187,7 @@
 </head>
 
 <body>
-    <!-- CHUVA DE FIGURINHAS: Adicionamos muitas figurinhas espalhadas pelo site todo! -->
+    <!-- Chuva de figurinhas -->
     <img src="https://pinimg.com" class="figurinha f1" alt="Broca BGK">
     <img src="https://pinimg.com" class="figurinha f2" alt="Planeta Plug">
     <img src="https://pinimg.com" class="figurinha f3" alt="Broca Sticker">
@@ -189,14 +196,13 @@
     <img src="https://pinimg.com" class="figurinha f6" alt="Broca Final">
 
     <h1>zax songs</h1>
-    <!-- O lema irado que você pediu -->
     <p class="lema">⚡ rep e vida 🎵</p>
 
-    <!-- A barra de pesquisa profissional -->
     <div class="caixa-pesquisa">
         <input type="text" placeholder="Pesquise músicas ou artistas...">
     </div>
 
+    <!-- O nome do artista fica bem em cima da galeria de músicas -->
     <h2>Brocasito</h2>
     <div class="galeria-videos">
         <iframe src="https://youtube.com" title="Brocasito - “Tentando sair do Gueto”" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

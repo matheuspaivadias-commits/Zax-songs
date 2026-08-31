@@ -1,46 +1,177 @@
 <!DOCTYPE html>
-<html lang=" pt-br">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>zax songs</title>
+
+    <style>
+        /* Animação do fundo alternando entre preto e vermelho escuro */
+        @keyframes fundoAnimado {
+            0%   { background-color: #0b0b0b; } 
+            50%  { background-color: #2b0000; } 
+            100% { background-color: #0b0b0b; } 
+        }
+
+        /* Animação das bordas trocando de cor (RGB Gamer) */
+        @keyframes efeitoRGB {
+            0%   { border-color: #ff0000; box-shadow: 0 0 15px #ff0000; } 
+            33%  { border-color: #9400d3; box-shadow: 0 0 15px #9400d3; } 
+            66%  { border-color: #0000ff; box-shadow: 0 0 15px #0000ff; } 
+            100% { border-color: #ff0000; box-shadow: 0 0 15px #ff0000; } 
+        }
+
+        body {
+            border: 8px solid #ff0000;  
+            padding: 20px;             
+            font-family: sans-serif;   
+            color: #ffffff;            
+            animation: fundoAnimado 10s ease-in-out infinite, efeitoRGB 6s linear infinite;
+        }
+
+        /* Estilo das figurinhas do Brocasito coladas nos cantos */
+        .figurinha {
+            position: fixed;         
+            width: 80px;             
+            height: auto;
+            border-radius: 50px;     
+            border: 2px solid #fff;  
+            z-index: 1000;           
+            opacity: 0.8;            
+        }
+
+        .canto-esquerdo {
+            top: 20px;
+            left: 20px;
+        }
+
+        .canto-direito {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        h1 {
+            color: #ff0000;            
+            text-align: center;        
+            font-size: 40px;           
+            text-transform: uppercase; 
+            text-shadow: 0 0 10px #ff0000;
+        }
+
+        h2 {
+            font-size: 32px;           
+            color: #ffffff;            
+            border-left: 5px solid #ff0000; 
+            padding-left: 10px;        
+            margin-top: 40px;          
+            text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
+        }
+
+        /* TRUQUE LEGAL: Apelido especial para deixar o Lil Zé branco com brilho branco */
+        .texto-branco {
+            color: #ffffff !important;
+            border-left: 5px solid #ffffff; 
+            text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+        }
+
+        h3 {
+            color: #ff3333;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: "🎵 "; 
+            padding-left: 20px;
+        }
+
+        /* MUDANÇA: Agora os links das músicas estão em azul bem vivo! */
+        a {
+            color: #00bfff;
+            text-decoration: none; 
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 5px #00bfff;
+        }
+
+        .galeria-videos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            width: 450px;
+            height: 250px;
+            max-width: 100%; 
+            border: 3px solid #ff0000; 
+            border-radius: 8px;
+            animation: efeitoRGB 6s linear infinite;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 15px;
+            font-size: 18px;
+            border-top: 2px dashed #ff0000;
+            color: #ffffff;
+            text-shadow: 0 0 10px #ff0000;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>zax songs
+    <!-- Figurinhas do Brocasito -->
+    <img src="https://pinimg.com" class="figurinha canto-esquerdo" alt="Broca BGK">
+    <img src="https://pinimg.com" class="figurinha canto-direito" alt="Planeta Plug">
 
+    <h1>zax songs</h1>
 
-        <h2> Brocasito</h2>
-        <iframe width="1337" height="752" src="https://www.youtube.com/embed/sK1X0oEdXyM"
-            title="Brocasito - “Tentando sair do Gueto” (Official Video)" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <iframe width="1271" height="671" src="https://www.youtube.com/embed/ZtMXAFfUayc"
-            title="BROCASITO - SCARSITO (Official Video)" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <h2>link do zap</h2>
-        iframe width="1271" height="715" src="https://www.youtube.com/embed/Hhu09xdNzZ8" title="12 - rei dos demônios
-        ft. Cravinhos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
-        picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <h2>Brocasito</h2>
+    <div class="galeria-videos">
+        <iframe src="https://youtube.com" title="Brocasito - “Tentando sair do Gueto”" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://youtube.com" title="BROCASITO - SCARSITO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
-        <h2>lil ze</h2>
-        <iframe width="1031" height="773" src="https://www.youtube.com/embed/nb-sGtTGOCA"
-            title="Lil Zé - se você quer roubar o banco (ft. FAB GODAMN)" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <h3>🔥 Mais Músicas do Brocasito:</h3>
+    <ul>
+        <li><a href="https://youtube.com" target="_blank">Clique aqui para ver todo o catálogo do Brocasito</a></li>
+    </ul>
 
-        <h2>vmz</h2>
+    <h2>link do zap</h2>
+    <div class="galeria-videos">
+        <iframe src="https://youtube.com" title="12 - rei dos demônios ft. Cravinhos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
-        <iframe width="1136" height="773" src="https://www.youtube.com/embed/g5ukRjIb9HQ" title="VMZ - Vênus"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <!-- Olha a classe 'texto-branco' aqui salvando o visual do Lil Zé -->
+    <h2 class="texto-branco">lil ze</h2>
+    <div class="galeria-videos">
+        <iframe src="https://youtube.com" title="Lil Zé - se você quer roubar o banco" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
+    <h2>vmz</h2>
+    <div class="galeria-videos">
+        <iframe src="https://youtube.com" title="VMZ - Vênus" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
+    <h3>🌌 Mais Músicas do VMZ:</h3>
+    <ul>
+        <li><a href="https://youtube.com" target="_blank">Plutão</a></li>
+        <li><a href="https://youtube.com" target="_blank">Sad Boy</a></li>
+        <li><a href="https://youtube.com" target="_blank">Clique aqui para ver todo o catálogo do VMZ</a></li>
+    </ul>
 
-    </h1>
+    <footer>
+        ⚡ Desenvolvido com muito estilo por Matheus 🎵
+    </footer>
+
 </body>
 
 </html>

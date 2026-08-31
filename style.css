@@ -1,0 +1,10 @@
+/* No CSS chamamos o apelido com um pontinho na frente */
+.texto-branco {
+    color: #ffffff !important; /* Força o nome a ficar branquinho */
+    text-shadow: 0 0 10px #ffffff; /* Dá um brilho branco também! */
+}
+
+/* E mudamos a cor dos links (tag 'a') para azul */
+a {
+    color: #00bfff; /* Um azul ciano bem vivo e bonito */
+}
